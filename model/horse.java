@@ -26,6 +26,8 @@ public class horse {
         }
     }
 
+    // the constructors
+
     public horse() {}
 
     public horse(String name, String breed, String color, Gender gender, LocalDate birthDate) {
@@ -37,6 +39,14 @@ public class horse {
         this.birthDate = birthDate;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
@@ -46,5 +56,100 @@ public class horse {
             throw new IllegalArgumentException("Horse name can't be empty dumbass");
         }
         this.name = name.trim();
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed != null ? breed.trim() : null;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color != null ? color.trim() : null;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(LocalDate birthDate) {
+        if (birthDate!=null&&birthDate.isAfter(LocalDate.now())) {
+            throw new IllegalArgumentException("How the hell you gonna put in a future birth date");
+        }
+        this.birthDate = birthDate;
+    }
+
+    public LocalDate getArrivalDate() {
+        return arrivalDate;
+    }
+
+    public void setArrivalDate(LocalDate arrivalDate) {
+        if (arrivalDate!=null&&arrivalDate.isAfter(arrivalDate.now())) {
+            throw new IllegalArgumentException("How the hell you gonna put in a future arrival date");
+        }
+        this.arrivalDate = arrivalDate;
+    }
+
+    public int getStallId() {
+        return stallId;
+    }
+
+    public void setStallId(int stallId) {
+        if (stallId < 0) {
+            throw new IllegalArgumentException("stall id cant be lower than 0 twin");
+        }
+        this.stallId = stallId;
+    }
+
+    public String getSire() {
+        return sire;
+    }
+    
+    public void setSire(String sire) {
+        this.sire = sire != null ? sire.trim() : null;
+    }
+    
+    public String getDam() {
+        return dam;
+    }
+    
+    public void setDam(String dam) {
+        this.dam = dam != null h? dam.trim() : null;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        if (height < 0) {
+            throw new IllegalArgumentException("how does a horse have a negative height vro :broken_heart:");
+        }
+        this.height = height;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        if (weight < 0) {
+            throw new IllegalArgumentException("damn he be floatin yo");
+        }
+        this.weight = weight;
     }
 }
