@@ -64,7 +64,7 @@ public class horse {
 
     public void setBreed(String breed) {
         this.breed = breed != null ? breed.trim() : null;
-    }
+    } // checks if the breed string is null first then if its not null then set it, else it sets it to null instead
 
     public String getColor() {
         return color;
@@ -93,12 +93,13 @@ public class horse {
         this.birthDate = birthDate;
     }
 
+
     public LocalDate getArrivalDate() {
         return arrivalDate;
     }
 
     public void setArrivalDate(LocalDate arrivalDate) {
-        if (arrivalDate!=null&&arrivalDate.isAfter(arrivalDate.now())) {
+        if (arrivalDate!=null&&arrivalDate.isAfter(LocalDate.now())) {
             throw new IllegalArgumentException("How the hell you gonna put in a future arrival date");
         }
         this.arrivalDate = arrivalDate;
