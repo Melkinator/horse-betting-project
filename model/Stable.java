@@ -23,7 +23,7 @@ public class Stable {
 
     public Horse getHorse(int i) {
         if (i>=0&&i<horseCount) {
-            return horse[index];
+            return horses[i];
         }
         return null;
     }
