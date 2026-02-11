@@ -156,8 +156,11 @@ public class Horse {
         this.weight = weight;
     }
 
-    public void printInfo() {
-        System.out.println("Name: " + getName() + "\nBreed: " + getBreed() + "\nColor: " + getColor() + "\nGender: " + getGender() + "\nBirthday: " + getBirthDate() + "\nArrival Time: " + getArrivalDate() + "\nStall ID: " + getStallId() + "\nSire: " + getSire() + "\nDam: " + getDam() + "\nHeight: " + getHeight() + "\nWeight: " + getWeight());
+    @Override
+    public String toString() {
+        return "Horse [id=" + id + ", name=" + name + ", breed=" + breed + ", color=" + color + ", gender=" + gender
+                + ", birthDate=" + birthDate + ", arrivalDate=" + arrivalDate + ", stallId=" + stallId + ", sire="
+                + sire + ", dam=" + dam + ", weight=" + weight + ", height=" + height + "]";
     }
 
     // man what even are horses

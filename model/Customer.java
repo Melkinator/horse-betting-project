@@ -7,13 +7,13 @@ public class Customer {
     private String customerName;
     private Horse horse;
     private double snapshotWeight;
-    private double budget;
+    private boolean isBuying;
 
-    public Customer(String customerName, Horse horse, double budget) {
+    public Customer(String customerName, Horse horse, boolean isBuying) {
         this.customerName = customerName;
         this.horse = horse;
-        this.budget = budget;
-        this.snapshotWeight = horse.weight;
+        this.isBuying = false;
+        this.snapshotWeight = horse.getWeight();
         
         customerCount++;
     }
@@ -22,7 +22,7 @@ public class Customer {
         return customerCount;
     }
 
-    public String getCutomerName() {
+    public String getCustomerName() {
         return customerName;
     }
 
@@ -30,24 +30,19 @@ public class Customer {
         return horse;
     }
 
-    public double getBudget() {
-        return budget;
+    public boolean isBuying() {
+        return isBuying;
     }
 
-         void setBudget(double budget) {
-        if (budget > 0) {  
-            this.budget = budget;
-        }
-    }
-
-        void printCustomerInfo() {
-        System.out.println("Customer: " + customerName);
-        System.out.println("Horse weight at purchase time: " + snapshotWeight);
+    public void setBuying(boolean buying) {
+        this.isBuying = buying;
     }
 
     @Override
     public String toString() {
-        return "Customer [customerName=" + customerName + ", horse=" + horse + ", snapshotWeight=" 
-                + snapshotWeight + ", budget=" + budget + "]";
+        return "Customer [customerName=" + customerName + ", horse=" + horse + ", snapshotWeight=" + snapshotWeight
+                + ", isBuying=" + isBuying + "]";
     }
+
+    
 }
